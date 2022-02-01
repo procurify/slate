@@ -1,17 +1,29 @@
-FROM ruby:2.5.1
+FROM ruby:2.6-slim
 
-RUN apt-get update && apt-get install -y nodejs \
-&& apt-get clean && rm -rf /var/lib/apt/lists/*
+WORKDIR /srv/slate
 
-COPY ./Gemfile /usr/src/app/
-COPY ./Gemfile.lock /usr/src/app/
-WORKDIR /usr/src/app
-
-RUN bundle install
-
-COPY . /usr/src/app
-VOLUME /usr/src/app/source
+VOLUME /srv/slate/build
+VOLUME /srv/slate/source
 
 EXPOSE 4567
 
-CMD ["bundle", "exec", "middleman", "server", "--watcher-force-polling"]
+COPY Gemfile .
+COPY Gemfile.lock .
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        build-essential \
+        git \
+        nodejs \
+    && gem install bundler \
+    && bundle install \
+    && apt-get remove -y build-essential git \
+    && apt-get autoremove -y \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY . /srv/slate
+
+RUN chmod +x /srv/slate/slate.sh
+
+ENTRYPOINT ["/srv/slate/slate.sh"]
+CMD ["build"]
