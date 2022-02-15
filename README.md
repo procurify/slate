@@ -19,8 +19,11 @@ Getting Started with Slate
 You're going to need:
 
  - **Linux or macOS** — Windows may work, but is unsupported.
- - **Ruby, version 2.3.1 or newer**
+ - **Ruby, version 3.1.0p or newer**
  - **Bundler** — If Ruby is already installed, but the `bundle` command doesn't work, just run `gem install bundler` in a terminal.
+
+If you are on an M1 machine, you may experience problems installing `ruby`, please following this guide here
+https://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/?utm_source=stackoverflow&utm_campaign=51126403
 
 ### Developing Locally
 
@@ -46,5 +49,11 @@ If you'd prefer to use Docker, instructions are available [in the wiki](https://
 ### Deploying to S3
 
 1. Ensure you have AWS staging access to S3.  If you don't, speak with @prokervify
-2. Compile your changes into static files using the command `bundle exec middleman build --clean`
-3. Copy your static files to S3, using the command `aws s3 sync ./build s3://public-docs.procurify-staging.com/integrations`
+2. Compile your changes into static files using the command
+```
+bundle exec middleman build --clean
+```
+3. Copy your static files to S3, using the command 
+```
+aws s3 sync ./build s3://public-docs.procurify-staging.com/netsuite
+```
