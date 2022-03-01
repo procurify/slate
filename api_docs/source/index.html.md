@@ -1687,3 +1687,194 @@ ID of the integration object.
 
 <code>message</code><br />
 Optional message to save to integration logs.
+
+## Create Catalog Item  <code class='post'>POST</code>
+
+### HTTP Request
+
+`https://example.procurify.com/api/v3/integrations/catalog-items/`
+
+> The above command accepts a body:
+
+```json
+{
+  "name": "Some new item",
+  "unit_type": "each",
+  "vendor": 6,
+  "account_code": 1,
+  "internal_sku": "1234",
+  "description": "This is an item",
+  "product_url": "https://www.procurify.com",
+  "currency": 1,
+  "cost": "1.00000000",
+  "external_id": "1234",
+  "custom_fields": {
+    "Text Field": "1234",
+    "Date Field": "2022-01-01",
+  }
+}
+```
+
+> The above command returns a JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": 31,
+    "name": "Some new item",
+    "unit_type": "each",
+    "vendor": 6,
+    "account_code": 1,
+    "internal_sku": "1234",
+    "active": true,
+    "description": "This is an item",
+    "product_url": "https://www.procurify.com",
+    "currency": 1,
+    "cost": "1.00000000",
+    "external_id": "1234",
+    "custom_fields": {
+      "Text Field": "1234",
+      "Date Field": "2022-01-01"
+    }
+  },
+  "metadata": {}
+}
+```
+
+### HTTP Response Status Code
+
+201 CREATED
+
+
+### Arguments
+
+<code>name</code><span class="required-tag">required</span><br />
+Name of your item.
+
+<code>unit_type</code><br />
+Unit name of your item. (Ex: each, liters, feet, etc)
+
+<code>vendor</code><span class="required-tag">required</span><br />
+The primary key to a Procurify vendor.  You will need to query the respective API for this.
+
+<code>account_code</code><span class="required-tag">required</span><br />
+The primary key to a Procurify account code (a.k.a. GL code).  You will need to query the respective API for this.
+
+<code>internal_sku</code><br />
+A string representing some sort of serial/sku number.
+
+<code>currency</code><span class="required-tag">required</span><br />
+The primary key to a Procurify currency.  You will need to query the respective API for this.
+
+<code>description</code><br />
+A more lengthy blob of text to describe your catalog item
+
+<code>product_url</code><br />
+An external link to your item (Ex: if it's from Amazon, maybe a link to the Amazon's page.  Or if it's on wikipedia, maybe a wiki link.)
+
+<code>cost</code><span class="required-tag">required</span><br />
+Amount for your item.  Although this field is required, you may choose an amount of 0.
+
+<code>custom_fields</code><br />
+Expects key/value pairs for enabled custom fields.  You may have to inspect the domain to see what custom fields are enabled.  The keys must match exactly to how custom fields are named in the system.
+
+## Update Catalog Item  <code class='put'>PUT</code>
+
+### HTTP Request
+
+`https://example.procurify.com/api/v3/integrations/catalog-items/1234/`
+
+> The above command accepts a body:
+
+```json
+{
+  "name": "Some new item",
+  "unit_type": "each",
+  "vendor": 6,
+  "account_code": 1,
+  "internal_sku": "1234",
+  "description": "This is an item",
+  "product_url": "https://www.procurify.com",
+  "currency": 1,
+  "cost": "1.00000000",
+  "external_id": "1234",
+  "custom_fields": {
+    "Text Field": "1234",
+    "Date Field": "2022-01-01",
+  }
+}
+```
+
+> The above command returns a JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": 31,
+    "name": "Some new item",
+    "unit_type": "each",
+    "vendor": 6,
+    "account_code": 1,
+    "internal_sku": "1234",
+    "active": true,
+    "description": "This is an item",
+    "product_url": "https://www.procurify.com",
+    "currency": 1,
+    "cost": "1.00000000",
+    "external_id": "1234",
+    "custom_fields": {
+      "Text Field": "1234",
+      "Date Field": "2022-01-01"
+    }
+  },
+  "metadata": {}
+}
+```
+
+### HTTP Response Status Code
+
+200 OK
+
+
+### Arguments
+
+<code>name</code><span class="required-tag">required</span><br />
+Name of your item.
+
+<code>unit_type</code><br />
+Unit name of your item. (Ex: each, liters, feet, etc)
+
+<code>vendor</code><span class="required-tag">required</span><br />
+The primary key to a Procurify vendor.  You will need to query the respective API for this.
+
+<code>account_code</code><span class="required-tag">required</span><br />
+The primary key to a Procurify account code (a.k.a. GL code).  You will need to query the respective API for this.
+
+<code>internal_sku</code><br />
+A string representing some sort of serial/sku number.
+
+<code>currency</code><span class="required-tag">required</span><br />
+The primary key to a Procurify currency.  You will need to query the respective API for this.
+
+<code>description</code><br />
+A more lengthy blob of text to describe your catalog item
+
+<code>product_url</code><br />
+An external link to your item (Ex: if it's from Amazon, maybe a link to the Amazon's page.  Or if it's on wikipedia, maybe a wiki link.)
+
+<code>cost</code><span class="required-tag">required</span><br />
+Amount for your item.  Although this field is required, you may choose an amount of 0.
+
+<code>custom_fields</code><br />
+Expects key/value pairs for enabled custom fields.  You may have to inspect the domain to see what custom fields are enabled.  The keys must match exactly to how custom fields are named in the system.
+
+## Delete Catalog Item  <code class='delete'>DELETE</code>
+
+### HTTP Request
+
+`https://example.procurify.com/api/v3/integrations/catalog-items/1234/`
+
+
+### HTTP Response Status Code
+
+204 No Content
