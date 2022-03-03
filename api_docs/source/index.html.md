@@ -14,10 +14,10 @@ base64 string is the base64-encoding of "username:password"
 
 ```json
 {
-    "data": {
-        "auth_string": "auth_string"
-    },
-    "metadata": {}
+  "data": {
+    "auth_string": "auth_string"
+  },
+  "metadata": {}
 }
 ```
 
@@ -27,11 +27,13 @@ base64 string is the base64-encoding of "username:password"
 
 ```javascript
 
-    Authorization:Basic aW50ZWdyYXRpb25zQHByb2N1c
+Authorization:Basic
+aW50ZWdyYXRpb25zQHByb2N1c
 
 ```
 
-This endpoint enables integration and get or create the integration user. It returns a basic authentication string of the integration user.
+This endpoint enables integration and get or create the integration user. It returns a basic authentication string of
+the integration user.
 
 <aside class="notice">
 Only users with superuser role can call this endpoint.
@@ -51,38 +53,38 @@ Only users with superuser role can call this endpoint.
 
 ```json
 {
-    "data": [
-        {
-            "id": 1,
-            "code": "1000",
-            "description": "Supplies",
-            "parent": null,
-            "active": true,
-            "account_type": "Expense",
-            "external_id": "1234",
-            "custom_fields": {}
-        },
-        {
-            "id": 2,
-            "code": "2000",
-            "description": "Services",
-            "parent": null,
-            "active": true,
-            "account_type": "Expense",
-            "external_id": "4321",
-            "custom_fields": {}
-        }
-    ],
-    "metadata": {
-        "pagination": {
-            "count": 2,
-            "next": null,
-            "previous": null,
-            "page_size": 10,
-            "num_pages": 1,
-            "current_page": 1
-        }
+  "data": [
+    {
+      "id": 1,
+      "code": "1000",
+      "description": "Supplies",
+      "parent": null,
+      "active": true,
+      "account_type": "Expense",
+      "external_id": "1234",
+      "custom_fields": {}
+    },
+    {
+      "id": 2,
+      "code": "2000",
+      "description": "Services",
+      "parent": null,
+      "active": true,
+      "account_type": "Expense",
+      "external_id": "4321",
+      "custom_fields": {}
     }
+  ],
+  "metadata": {
+    "pagination": {
+      "count": 2,
+      "next": null,
+      "previous": null,
+      "page_size": 10,
+      "num_pages": 1,
+      "current_page": 1
+    }
+  }
 }
 ```
 
@@ -109,18 +111,18 @@ CODE | the alphanumeric account code, **can be comma separated** | `?code=ABC123
 
 ```json
 {
-    "data": {
-            "id": 1,
-            "code": "1000",
-            "description": "Supplies",
-            "parent": null,
-            "active": true,
-            "account_type": "Expense",
-            "external_id": "1234",
-            "custom_fields": {}
-    },
-    "metadata": {}
-    }
+  "data": {
+    "id": 1,
+    "code": "1000",
+    "description": "Supplies",
+    "parent": null,
+    "active": true,
+    "account_type": "Expense",
+    "external_id": "1234",
+    "custom_fields": {}
+  },
+  "metadata": {}
+}
 }
 ```
 
@@ -152,17 +154,17 @@ This endpoint retrieves a list of accounts with specific status.
 
 ```json
 {
-    "data": {
-        "id": 24,
-        "code": "1234",
-        "description": "Test Account",
-        "parent": null,
-        "active": true,
-        "account_type": "2",
-        "external_id": "4321",
-        "custom_fields": {}
-    },
-    "metadata": {}
+  "data": {
+    "id": 24,
+    "code": "1234",
+    "description": "Test Account",
+    "parent": null,
+    "active": true,
+    "account_type": "2",
+    "external_id": "4321",
+    "custom_fields": {}
+  },
+  "metadata": {}
 }
 ```
 
@@ -217,17 +219,17 @@ ID of the integration object.
 
 ```json
 {
-    "data": {
-        "id": 1,
-        "code": "1234",
-        "description": "Test Account",
-        "parent": null,
-        "active": true,
-        "account_type": "2",
-        "external_id": "4321",
-        "custom_fields": {}
-    },
-    "metadata": {}
+  "data": {
+    "id": 1,
+    "code": "1234",
+    "description": "Test Account",
+    "parent": null,
+    "active": true,
+    "account_type": "2",
+    "external_id": "4321",
+    "custom_fields": {}
+  },
+  "metadata": {}
 }
 ```
 
@@ -236,7 +238,6 @@ This endpoint updates a specific account.
 ### HTTP Request
 
 `https://example.procurify.com/api/v3/integrations/netsuite/accounts/<ACCOUNT_ID>/`
-
 
 ### URL Parameters
 
@@ -295,32 +296,32 @@ ACCOUNT_ID | ID of the account being deleted
 
 ```json
 {
-    "data": [
-        {
-            "id": 13,
-            "name": "New term",
-            "description": "",
-            "external_id": "haha",
-            "custom_fields": {}
-        },
-        {
-        "id": 14,
-        "name": "New term 2",
-        "description": "",
-        "external_id": "haha 2",
-        "custom_fields": {}
+  "data": [
+    {
+      "id": 13,
+      "name": "New term",
+      "description": "",
+      "external_id": "haha",
+      "custom_fields": {}
     },
-    ],
-    "metadata": {
-        "pagination": {
-            "count": 1,
-            "next": null,
-            "previous": null,
-            "page_size": 10,
-            "num_pages": 1,
-            "current_page": 1
-        }
+    {
+      "id": 14,
+      "name": "New term 2",
+      "description": "",
+      "external_id": "haha 2",
+      "custom_fields": {}
     }
+  ],
+  "metadata": {
+    "pagination": {
+      "count": 1,
+      "next": null,
+      "previous": null,
+      "page_size": 10,
+      "num_pages": 1,
+      "current_page": 1
+    }
+  }
 }
 ```
 
@@ -346,15 +347,15 @@ STATUS | status can be `pending`, `synced`, or `error` | `?status=pending`
 
 ```json
 {
-    "data": {
-        "id": 14,
-        "name": "New term 2",
-        "description": "",
-        "external_id": "haha 2",
-        "custom_fields": {}
-    },
-    "metadata": {}
-    }
+  "data": {
+    "id": 14,
+    "name": "New term 2",
+    "description": "",
+    "external_id": "haha 2",
+    "custom_fields": {}
+  },
+  "metadata": {}
+}
 }
 ```
 
@@ -374,9 +375,9 @@ This endpoint retrieves a list of payment-terms with specific status.
 
 ```json
 {
-    "name": "New term 2",
-    "description": "This describes me",
-    "external_id": "haha 2"
+  "name": "New term 2",
+  "description": "This describes me",
+  "external_id": "haha 2"
 }
 ```
 
@@ -384,15 +385,15 @@ This endpoint retrieves a list of payment-terms with specific status.
 
 ```json
 {
-    "data": {
-        "id": 14,
-        "name": "New term 2",
-        "description": "",
-        "external_id": "haha 2",
-        "custom_fields": {}
-    },
-    "metadata": {}
-    }
+  "data": {
+    "id": 14,
+    "name": "New term 2",
+    "description": "",
+    "external_id": "haha 2",
+    "custom_fields": {}
+  },
+  "metadata": {}
+}
 }
 ```
 
@@ -423,9 +424,9 @@ ID of the integration object.
 
 ```json
 {
-    "name": "New term 2",
-    "description": "This describes me",
-    "external_id": "haha 2"
+  "name": "New term 2",
+  "description": "This describes me",
+  "external_id": "haha 2"
 }
 ```
 
@@ -433,15 +434,15 @@ ID of the integration object.
 
 ```json
 {
-    "data": {
-        "id": 14,
-        "name": "New term 2",
-        "description": "",
-        "external_id": "haha 2",
-        "custom_fields": {}
-    },
-    "metadata": {}
-    }
+  "data": {
+    "id": 14,
+    "name": "New term 2",
+    "description": "",
+    "external_id": "haha 2",
+    "custom_fields": {}
+  },
+  "metadata": {}
+}
 }
 ```
 
@@ -450,7 +451,6 @@ This endpoint updates a specific account.
 ### HTTP Request
 
 `https://example.procurify.com/api/v3/integrations/netsuite/payment-terms/<PAYMENT_TERM_ID>/`
-
 
 ### URL Parameters
 
@@ -541,17 +541,16 @@ MODEL | Filter Contenty Types by model name
 
 ## Get PO Custom Field <code class='get'>GET</code>
 
-
 > The above command returns a JSON structured like this:
 
 ```json
 {
-    "data": {
-        "id": 54,
-        "field_label": "Weight",
-        "field_required": false
-    },
-    "metadata": {}
+  "data": {
+    "id": 54,
+    "field_label": "Weight",
+    "field_required": false
+  },
+  "metadata": {}
 }
 ```
 
@@ -567,16 +566,15 @@ This endpoint retrieves the Purchase Order custom fields.
 
 ### URL Parameters
 
-
 ## Upsert PO Custom Field Value <code class='post'>POST</code>
 
 > The above command accepts a body:
 
 ```json
 {
-	"purchase_order_id": 1
-	"custom_field_id": 1
-	"custom_field_value": "Test"
+  "purchase_order_id": 1
+  "custom_field_id": 1
+  "custom_field_value": "Test"
 }
 ```
 
@@ -584,12 +582,12 @@ This endpoint retrieves the Purchase Order custom fields.
 
 ```json
 {
-    "data": {
-        "purchase_order_id": 1,
-        "custom_field_id": 1,
-        "custom_field_value": "Test"
-    },
-    "metadata": {}
+  "data": {
+    "purchase_order_id": 1,
+    "custom_field_id": 1,
+    "custom_field_value": "Test"
+  },
+  "metadata": {}
 }
 ```
 
@@ -614,39 +612,38 @@ PO custom field ID.
 <code>custom_field_value</code><span class="required-tag">required</span><br />
 Set custom field value for the purchase order.
 
-
 ## Get Object Maps <code class='get'>GET</code>
 
 > The above command returns a JSON structured like this:
 
 ```json
 {
-    "data": [
-        {
-            "id": 1,
-            "object_id": 151,
-            "status": 1,
-            "content_type": 23,
-            "external_id": ""
-        },
-        {
-            "id": 2,
-            "object_id": 1,
-            "status": 1,
-            "content_type": 23,
-            "external_id": ""
-        }
-    ],
-    "metadata": {
-        "pagination": {
-            "count": 2,
-            "next": null,
-            "previous": null,
-            "page_size": 10,
-            "num_pages": 1,
-            "current_page": 1
-        }
+  "data": [
+    {
+      "id": 1,
+      "object_id": 151,
+      "status": 1,
+      "content_type": 23,
+      "external_id": ""
+    },
+    {
+      "id": 2,
+      "object_id": 1,
+      "status": 1,
+      "content_type": 23,
+      "external_id": ""
     }
+  ],
+  "metadata": {
+    "pagination": {
+      "count": 2,
+      "next": null,
+      "previous": null,
+      "page_size": 10,
+      "num_pages": 1,
+      "current_page": 1
+    }
+  }
 }
 ```
 
@@ -672,11 +669,11 @@ STATUS | status can be "pending", "synced", or "error"
 
 ```json
 {
-    "object_id": 151,
-    "content_type": 23,
-    "status": 1,
-    "external_id": "1234",
-    "message": "Error Message"
+  "object_id": 151,
+  "content_type": 23,
+  "status": 1,
+  "external_id": "1234",
+  "message": "Error Message"
 }
 ```
 
@@ -684,14 +681,14 @@ STATUS | status can be "pending", "synced", or "error"
 
 ```json
 {
-    "data": {
-        "id": 1,
-        "object_id": 151,
-        "status": 1,
-        "content_type": 23,
-        "external_id": "1234"
-    },
-    "metadata": {}
+  "data": {
+    "id": 1,
+    "object_id": 151,
+    "status": 1,
+    "content_type": 23,
+    "external_id": "1234"
+  },
+  "metadata": {}
 }
 ```
 
@@ -748,7 +745,6 @@ OBJECT_MAP_ID | ID of the object map being deleted
 ### HTTP Response Status Code
 
 204 No Content
-
 
 ## Get Purchase Orders <code class='get'>GET</code>
 
@@ -958,7 +954,7 @@ This endpoint retrieves a list of purchase orders with specific status.
 
 #### status
 
-Use this field to get purchase orders of a certain status.  Multiple statuses can be combined using comma-separation. 
+Use this field to get purchase orders of a certain status. Multiple statuses can be combined using comma-separation.
 
 Value       | Description
 ----------- | -----------
@@ -1131,42 +1127,42 @@ Try it out! `?id=1234` will get you item receipt line with id=1234
 
 ```json
 {
-    "data": [
-        {
-            "id": 2,
-            "name": "Staples",
-            "active": true,
-            "address_line_one": "1852 24th Ave",
-            "address_line_two": "Unit 123",
-            "postal_code": "72715",
-            "city": "New York",
-            "state_province": "NY",
-            "country": "US",
-            "email": "vendoremail@test.com",
-            "alt_email": "vendoraltemail@test.com",
-            "contact": "Joe Smith",
-            "phone": "479-195-8789",
-            "alt_phone": "479-696-4781",
-            "fax": "479-222-5688",
-            "comments": "Please call AR when placing PO to confirm receipt.",
-            "url": "http://www.staples.com/",
-            "payment_term": "Due on Receipt",
-            "shipping_term": "FOB",
-            "vendor_external_id": "VENDOR_EX_1",
-            "external_id": "EX_VENDOR_2",
-            "custom_field": {}
-        }
-    ],
-    "metadata": {
-        "pagination": {
-            "count": 1,
-            "next": null,
-            "previous": null,
-            "page_size": 10,
-            "num_pages": 1,
-            "current_page": 1
-        }
+  "data": [
+    {
+      "id": 2,
+      "name": "Staples",
+      "active": true,
+      "address_line_one": "1852 24th Ave",
+      "address_line_two": "Unit 123",
+      "postal_code": "72715",
+      "city": "New York",
+      "state_province": "NY",
+      "country": "US",
+      "email": "vendoremail@test.com",
+      "alt_email": "vendoraltemail@test.com",
+      "contact": "Joe Smith",
+      "phone": "479-195-8789",
+      "alt_phone": "479-696-4781",
+      "fax": "479-222-5688",
+      "comments": "Please call AR when placing PO to confirm receipt.",
+      "url": "http://www.staples.com/",
+      "payment_term": "Due on Receipt",
+      "shipping_term": "FOB",
+      "vendor_external_id": "VENDOR_EX_1",
+      "external_id": "EX_VENDOR_2",
+      "custom_field": {}
     }
+  ],
+  "metadata": {
+    "pagination": {
+      "count": 1,
+      "next": null,
+      "previous": null,
+      "page_size": 10,
+      "num_pages": 1,
+      "current_page": 1
+    }
+  }
 }
 ```
 
@@ -1178,9 +1174,11 @@ This endpoint retrieves a list of vendors with specific status.
 
 ### URL Parameters
 
-Parameter | Description
---------- | -----------
-STATUS | status can be "pending", "synced", or "error"
+Parameter | Description                                                                                      | Example
+--------- |--------------------------------------------------------------------------------------------------| ---------
+STATUS | status can be "pending", "synced", or "error"                                                    | `?status=pending`
+name | name of the vendor                                                                               | `?name=BestBuy`
+show_all     | Can use this to show vendors that were never synced.  Might be useful for catalog item creation. | `?show_all=true`
 
 ### HTTP Response Status Code
 
@@ -1192,32 +1190,32 @@ STATUS | status can be "pending", "synced", or "error"
 
 ```json
 {
-    "data": {
-            "id": 2,
-            "name": "Staples",
-            "active": true,
-            "address_line_one": "1852 24th Ave",
-            "address_line_two": "Unit 123",
-            "postal_code": "72715",
-            "city": "New York",
-            "state_province": "NY",
-            "country": "US",
-            "email": "vendoremail@test.com",
-            "alt_email": "vendoraltemail@test.com",
-            "contact": "Joe Smith",
-            "phone": "479-195-8789",
-            "alt_phone": "479-696-4781",
-            "fax": "479-222-5688",
-            "comments": "Please call AR when placing PO to confirm receipt.",
-            "url": "http://www.staples.com/",
-            "payment_term": "Due on Receipt",
-            "shipping_term": "FOB",
-            "vendor_external_id": "VENDOR_EX_1",
-            "external_id": "EX_VENDOR_2",
-            "custom_field": {}
-        },
-    "metadata": {}
-    }
+  "data": {
+    "id": 2,
+    "name": "Staples",
+    "active": true,
+    "address_line_one": "1852 24th Ave",
+    "address_line_two": "Unit 123",
+    "postal_code": "72715",
+    "city": "New York",
+    "state_province": "NY",
+    "country": "US",
+    "email": "vendoremail@test.com",
+    "alt_email": "vendoraltemail@test.com",
+    "contact": "Joe Smith",
+    "phone": "479-195-8789",
+    "alt_phone": "479-696-4781",
+    "fax": "479-222-5688",
+    "comments": "Please call AR when placing PO to confirm receipt.",
+    "url": "http://www.staples.com/",
+    "payment_term": "Due on Receipt",
+    "shipping_term": "FOB",
+    "vendor_external_id": "VENDOR_EX_1",
+    "external_id": "EX_VENDOR_2",
+    "custom_field": {}
+  },
+  "metadata": {}
+}
 }
 ```
 
@@ -1237,7 +1235,36 @@ This endpoint retrieves a list of vendors with specific status.
 
 ```json
 {
-    "name": "Procurify",
+  "name": "Procurify",
+  "address_line_one": "455 Granville St",
+  "address_line_two": "300",
+  "postal_code": "V6C 1T1",
+  "city": "Vancouver",
+  "state_province": "British Columbia",
+  "country": "Canada",
+  "email": "vendoremail@test.com",
+  "alt_email": "vendoraltemail@test.com",
+  "contact": "Joe Smith",
+  "phone": "479-195-8789",
+  "alt_phone": "479-696-4781",
+  "fax": "479-222-5688",
+  "comments": "Please call AR when placing PO to confirm receipt.",
+  "url": "http://www.staples.com/",
+  "payment_term": "Due on Receipt",
+  "shipping_term": "FOB",
+  "vendor_external_id": "VENDOR_EX_1",
+  "external_id": "1234"
+}
+```
+
+> The above command returns a JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": 711,
+    "name": "Procurify,",
+    "active": true,
     "address_line_one": "455 Granville St",
     "address_line_two": "300",
     "postal_code": "V6C 1T1",
@@ -1255,39 +1282,10 @@ This endpoint retrieves a list of vendors with specific status.
     "payment_term": "Due on Receipt",
     "shipping_term": "FOB",
     "vendor_external_id": "VENDOR_EX_1",
-    "external_id": "1234"
-}
-```
-
-> The above command returns a JSON structured like this:
-
-```json
-{
-    "data": {
-        "id": 711,
-        "name": "Procurify,",
-        "active": true,
-        "address_line_one": "455 Granville St",
-        "address_line_two": "300",
-        "postal_code": "V6C 1T1",
-        "city": "Vancouver",
-        "state_province": "British Columbia",
-        "country": "Canada",
-        "email": "vendoremail@test.com",
-        "alt_email": "vendoraltemail@test.com",
-        "contact": "Joe Smith",
-        "phone": "479-195-8789",
-        "alt_phone": "479-696-4781",
-        "fax": "479-222-5688",
-        "comments": "Please call AR when placing PO to confirm receipt.",
-        "url": "http://www.staples.com/",
-        "payment_term": "Due on Receipt",
-        "shipping_term": "FOB",
-        "vendor_external_id": "VENDOR_EX_1",
-        "external_id": "1234",
-        "custom_fields": {}
-    },
-    "metadata": {}
+    "external_id": "1234",
+    "custom_fields": {}
+  },
+  "metadata": {}
 }
 ```
 
@@ -1366,7 +1364,36 @@ ID of the integration object.
 
 ```json
 {
-    "name": "Procurify",
+  "name": "Procurify",
+  "address_line_one": "455 Granville St",
+  "address_line_two": "300",
+  "postal_code": "V6C 1T1",
+  "city": "Vancouver",
+  "state_province": "British Columbia",
+  "country": "Canada",
+  "email": "vendoremail@test.com",
+  "alt_email": "vendoraltemail@test.com",
+  "contact": "Joe Smith",
+  "phone": "479-195-8789",
+  "alt_phone": "479-696-4781",
+  "fax": "479-222-5688",
+  "comments": "Please call AR when placing PO to confirm receipt.",
+  "url": "http://www.staples.com/",
+  "payment_term": "Due on Receipt",
+  "shipping_term": "FOB",
+  "vendor_external_id": "VENDOR_EX_1",
+  "external_id": "1234"
+}
+```
+
+> The above command returns a JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": 711,
+    "name": "Procurify,",
+    "active": true,
     "address_line_one": "455 Granville St",
     "address_line_two": "300",
     "postal_code": "V6C 1T1",
@@ -1384,39 +1411,10 @@ ID of the integration object.
     "payment_term": "Due on Receipt",
     "shipping_term": "FOB",
     "vendor_external_id": "VENDOR_EX_1",
-    "external_id": "1234"
-}
-```
-
-> The above command returns a JSON structured like this:
-
-```json
-{
-    "data": {
-        "id": 711,
-        "name": "Procurify,",
-        "active": true,
-        "address_line_one": "455 Granville St",
-        "address_line_two": "300",
-        "postal_code": "V6C 1T1",
-        "city": "Vancouver",
-        "state_province": "British Columbia",
-        "country": "Canada",
-        "email": "vendoremail@test.com",
-        "alt_email": "vendoraltemail@test.com",
-        "contact": "Joe Smith",
-        "phone": "479-195-8789",
-        "alt_phone": "479-696-4781",
-        "fax": "479-222-5688",
-        "comments": "Please call AR when placing PO to confirm receipt.",
-        "url": "http://www.staples.com/",
-        "payment_term": "Due on Receipt",
-        "shipping_term": "FOB",
-        "vendor_external_id": "VENDOR_EX_1",
-        "external_id": "1234",
-        "custom_fields": {}
-    },
-    "metadata": {}
+    "external_id": "1234",
+    "custom_fields": {}
+  },
+  "metadata": {}
 }
 ```
 
@@ -1534,7 +1532,7 @@ VENDOR_ID | ID of the vendor being deleted
         "external_id": "external-account-code-10",
         "uuid": "",
         "identifiter": "account_code_1 - description",
-        "message": "Sync Complete",
+        "message": "Sync Complete"
       },
       "created_at": "2019-12-10T17:47:00.373867-08:00"
     },
@@ -1548,7 +1546,7 @@ VENDOR_ID | ID of the vendor being deleted
         "external_id": "external-vendor-20",
         "uuid": "",
         "identifiter": "Vendor 1",
-        "message": "Sync Complete",
+        "message": "Sync Complete"
       },
       "created_at": "2019-12-10T17:47:00.373867-08:00"
     },
@@ -1562,7 +1560,7 @@ VENDOR_ID | ID of the vendor being deleted
         "external_id": "external-po-30",
         "uuid": "6bfcf0610fd211eaa1e506ca8f09037c",
         "identifiter": "PF30",
-        "message": "You have entered an Invalid Field Value 2 for the following field: location.",
+        "message": "You have entered an Invalid Field Value 2 for the following field: location."
       },
       "created_at": "2019-12-10T17:47:00.373867-08:00"
     },
@@ -1576,10 +1574,10 @@ VENDOR_ID | ID of the vendor being deleted
         "external_id": "external-reciept-item-40",
         "uuid": "6bfcf0610fd211eaa1e506ca8f09037c",
         "identifiter": "PF30",
-        "message": "You can not initialize itemreceipt: invalid reference 42111.",
+        "message": "You can not initialize itemreceipt: invalid reference 42111."
       },
       "created_at": "2019-12-10T17:47:00.373867-08:00"
-    },
+    }
   ],
   "metadata": {
     "pagination": {
@@ -1615,20 +1613,20 @@ object_type | `purchaseorder`, `receiptline`, `accountcode`, `vendor`
 
 ```json
 [
-    {
-        "object_id": 151,
-        "content_type": 23,
-        "status": 1,
-        "external_id": "1234",
-        "message": "Error Message"
-    },
-    {
-        "object_id": 121,
-        "content_type": 23,
-        "status": 1,
-        "external_id": "1244",
-        "message": "Error Message"
-    },
+  {
+    "object_id": 151,
+    "content_type": 23,
+    "status": 1,
+    "external_id": "1234",
+    "message": "Error Message"
+  },
+  {
+    "object_id": 121,
+    "content_type": 23,
+    "status": 1,
+    "external_id": "1244",
+    "message": "Error Message"
+  }
 ]
 ```
 
@@ -1636,23 +1634,23 @@ object_type | `purchaseorder`, `receiptline`, `accountcode`, `vendor`
 
 ```json
 {
-    "data": [
+  "data": [
     {
-        "id": 1,
-        "object_id": 151,
-        "status": 1,
-        "content_type": 23,
-        "external_id": "1234"
+      "id": 1,
+      "object_id": 151,
+      "status": 1,
+      "content_type": 23,
+      "external_id": "1234"
     },
     {
-        "id": 2,
-        "object_id": 121,
-        "status": 1,
-        "content_type": 23,
-        "external_id": "1244"
+      "id": 2,
+      "object_id": 121,
+      "status": 1,
+      "content_type": 23,
+      "external_id": "1244"
     }
-    ],
-    "metadata": {}
+  ],
+  "metadata": {}
 }
 ```
 
@@ -1710,7 +1708,7 @@ Optional message to save to integration logs.
   "external_id": "1234",
   "custom_fields": {
     "Text Field": "1234",
-    "Date Field": "2022-01-01",
+    "Date Field": "2022-01-01"
   }
 }
 ```
@@ -1745,7 +1743,6 @@ Optional message to save to integration logs.
 
 201 CREATED
 
-
 ### Arguments
 
 <code>name</code><span class="required-tag">required</span><br />
@@ -1755,28 +1752,30 @@ Name of your item.
 Unit name of your item. (Ex: each, liters, feet, etc)
 
 <code>vendor</code><span class="required-tag">required</span><br />
-The primary key to a Procurify vendor.  You will need to query the respective API for this.
+The primary key to a Procurify vendor. You will need to query the respective API for this.
 
 <code>account_code</code><span class="required-tag">required</span><br />
-The primary key to a Procurify account code (a.k.a. GL code).  You will need to query the respective API for this.
+The primary key to a Procurify account code (a.k.a. GL code). You will need to query the respective API for this.
 
 <code>internal_sku</code><br />
 A string representing some sort of serial/sku number.
 
 <code>currency</code><span class="required-tag">required</span><br />
-The primary key to a Procurify currency.  You will need to query the respective API for this.
+The primary key to a Procurify currency. You will need to query the respective API for this.
 
 <code>description</code><br />
 A more lengthy blob of text to describe your catalog item
 
 <code>product_url</code><br />
-An external link to your item (Ex: if it's from Amazon, maybe a link to the Amazon's page.  Or if it's on wikipedia, maybe a wiki link.)
+An external link to your item (Ex: if it's from Amazon, maybe a link to the Amazon's page. Or if it's on wikipedia,
+maybe a wiki link.)
 
 <code>cost</code><span class="required-tag">required</span><br />
-Amount for your item.  Although this field is required, you may choose an amount of 0.
+Amount for your item. Although this field is required, you may choose an amount of 0.
 
 <code>custom_fields</code><br />
-Expects key/value pairs for enabled custom fields.  You may have to inspect the domain to see what custom fields are enabled.  The keys must match exactly to how custom fields are named in the system.
+Expects key/value pairs for enabled custom fields. You may have to inspect the domain to see what custom fields are
+enabled. The keys must match exactly to how custom fields are named in the system.
 
 ## Update Catalog Item  <code class='put'>PUT</code>
 
@@ -1800,7 +1799,7 @@ Expects key/value pairs for enabled custom fields.  You may have to inspect the 
   "external_id": "1234",
   "custom_fields": {
     "Text Field": "1234",
-    "Date Field": "2022-01-01",
+    "Date Field": "2022-01-01"
   }
 }
 ```
@@ -1835,7 +1834,6 @@ Expects key/value pairs for enabled custom fields.  You may have to inspect the 
 
 200 OK
 
-
 ### Arguments
 
 <code>name</code><span class="required-tag">required</span><br />
@@ -1845,28 +1843,30 @@ Name of your item.
 Unit name of your item. (Ex: each, liters, feet, etc)
 
 <code>vendor</code><span class="required-tag">required</span><br />
-The primary key to a Procurify vendor.  You will need to query the respective API for this.
+The primary key to a Procurify vendor. You will need to query the respective API for this.
 
 <code>account_code</code><span class="required-tag">required</span><br />
-The primary key to a Procurify account code (a.k.a. GL code).  You will need to query the respective API for this.
+The primary key to a Procurify account code (a.k.a. GL code). You will need to query the respective API for this.
 
 <code>internal_sku</code><br />
 A string representing some sort of serial/sku number.
 
 <code>currency</code><span class="required-tag">required</span><br />
-The primary key to a Procurify currency.  You will need to query the respective API for this.
+The primary key to a Procurify currency. You will need to query the respective API for this.
 
 <code>description</code><br />
 A more lengthy blob of text to describe your catalog item
 
 <code>product_url</code><br />
-An external link to your item (Ex: if it's from Amazon, maybe a link to the Amazon's page.  Or if it's on wikipedia, maybe a wiki link.)
+An external link to your item (Ex: if it's from Amazon, maybe a link to the Amazon's page. Or if it's on wikipedia,
+maybe a wiki link.)
 
 <code>cost</code><span class="required-tag">required</span><br />
-Amount for your item.  Although this field is required, you may choose an amount of 0.
+Amount for your item. Although this field is required, you may choose an amount of 0.
 
 <code>custom_fields</code><br />
-Expects key/value pairs for enabled custom fields.  You may have to inspect the domain to see what custom fields are enabled.  The keys must match exactly to how custom fields are named in the system.
+Expects key/value pairs for enabled custom fields. You may have to inspect the domain to see what custom fields are
+enabled. The keys must match exactly to how custom fields are named in the system.
 
 ## Delete Catalog Item  <code class='delete'>DELETE</code>
 
@@ -1874,7 +1874,88 @@ Expects key/value pairs for enabled custom fields.  You may have to inspect the 
 
 `https://example.procurify.com/api/v3/integrations/catalog-items/1234/`
 
-
 ### HTTP Response Status Code
 
 204 No Content
+
+## Get Currencies  <code class='get'>GET</code>
+
+### HTTP Request
+
+`https://example.procurify.com/api/v3/integrations/currencies/`
+
+### HTTP Response Status Code
+
+200 OK
+
+### URL Parameters
+
+Parameter    | Description                                                                                                                                     | Example
+------------ |-------------------------------------------------------------------------------------------------------------------------------------------------| ----
+show_all     | Due to currencies not synced between NS + PFY, please be sure to always pass this in | `?show_all=true`
+name         | name filter, useful to reduce the query speed + reduce response size                                                                            | `?name=USD`
+
+### HTTP Response
+
+> The above command returns a JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "CAD",
+      "rate": "0.769231",
+      "active": true,
+      "description": "",
+      "base": false,
+      "external_id": null,
+      "custom_fields": {
+      }
+    },
+    {
+      "id": 3,
+      "name": "USD",
+      "rate": "1.000000",
+      "active": true,
+      "description": "",
+      "base": true,
+      "external_id": null,
+      "custom_fields": {
+      }
+    },
+    {
+      "id": 4,
+      "name": "EUR",
+      "rate": "0.769231",
+      "active": true,
+      "description": "",
+      "base": false,
+      "external_id": null,
+      "custom_fields": {
+      }
+    },
+    {
+      "id": 86,
+      "name": "KRW",
+      "rate": "1.538462",
+      "active": true,
+      "description": "",
+      "base": false,
+      "external_id": null,
+      "custom_fields": {
+      }
+    }
+  ],
+  "metadata": {
+    "pagination": {
+      "count": 4,
+      "next": null,
+      "previous": null,
+      "page_size": 10,
+      "num_pages": 1,
+      "current_page": 1
+    }
+  }
+}
+```
