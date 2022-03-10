@@ -1751,16 +1751,16 @@ Name of your item.
 <code>unit_type</code><br />
 Unit name of your item. (Ex: each, liters, feet, etc)
 
-<code>vendor</code><span class="required-tag">required</span><br />
+<code>vendor</code><br />
 The primary key to a Procurify vendor. You will need to query the respective API for this.
 
-<code>account_code</code><span class="required-tag">required</span><br />
+<code>account_code</code><br />
 The primary key to a Procurify account code (a.k.a. GL code). You will need to query the respective API for this.
 
 <code>internal_sku</code><br />
 A string representing some sort of serial/sku number.
 
-<code>currency</code><span class="required-tag">required</span><br />
+<code>currency</code><br />
 The primary key to a Procurify currency. You will need to query the respective API for this.
 
 <code>description</code><br />
@@ -1770,12 +1770,8 @@ A more lengthy blob of text to describe your catalog item
 An external link to your item (Ex: if it's from Amazon, maybe a link to the Amazon's page. Or if it's on wikipedia,
 maybe a wiki link.)
 
-<code>cost</code><span class="required-tag">required</span><br />
-Amount for your item. Although this field is required, you may choose an amount of 0.
-
-<code>custom_fields</code><br />
-Expects key/value pairs for enabled custom fields. You may have to inspect the domain to see what custom fields are
-enabled. The keys must match exactly to how custom fields are named in the system.
+<code>cost</code><br />
+Amount for your item.
 
 ## Update Catalog Item  <code class='put'>PUT</code>
 
@@ -1842,16 +1838,16 @@ Name of your item.
 <code>unit_type</code><br />
 Unit name of your item. (Ex: each, liters, feet, etc)
 
-<code>vendor</code><span class="required-tag">required</span><br />
+<code>vendor</code><br />
 The primary key to a Procurify vendor. You will need to query the respective API for this.
 
-<code>account_code</code><span class="required-tag">required</span><br />
+<code>account_code</code><br />
 The primary key to a Procurify account code (a.k.a. GL code). You will need to query the respective API for this.
 
 <code>internal_sku</code><br />
 A string representing some sort of serial/sku number.
 
-<code>currency</code><span class="required-tag">required</span><br />
+<code>currency</code><br />
 The primary key to a Procurify currency. You will need to query the respective API for this.
 
 <code>description</code><br />
@@ -1861,12 +1857,9 @@ A more lengthy blob of text to describe your catalog item
 An external link to your item (Ex: if it's from Amazon, maybe a link to the Amazon's page. Or if it's on wikipedia,
 maybe a wiki link.)
 
-<code>cost</code><span class="required-tag">required</span><br />
-Amount for your item. Although this field is required, you may choose an amount of 0.
+<code>cost</code><br />
+Amount for your item.
 
-<code>custom_fields</code><br />
-Expects key/value pairs for enabled custom fields. You may have to inspect the domain to see what custom fields are
-enabled. The keys must match exactly to how custom fields are named in the system.
 
 ## Delete Catalog Item  <code class='delete'>DELETE</code>
 
