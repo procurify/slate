@@ -1705,11 +1705,7 @@ Optional message to save to integration logs.
   "product_url": "https://www.procurify.com",
   "currency": 1,
   "cost": "1.00000000",
-  "external_id": "1234",
-  "custom_fields": {
-    "Text Field": "1234",
-    "Date Field": "2022-01-01"
-  }
+  "external_id": "1234"
 }
 ```
 
@@ -1729,11 +1725,7 @@ Optional message to save to integration logs.
     "product_url": "https://www.procurify.com",
     "currency": 1,
     "cost": "1.00000000",
-    "external_id": "1234",
-    "custom_fields": {
-      "Text Field": "1234",
-      "Date Field": "2022-01-01"
-    }
+    "external_id": "1234"
   },
   "metadata": {}
 }
@@ -1792,11 +1784,7 @@ Amount for your item.
   "product_url": "https://www.procurify.com",
   "currency": 1,
   "cost": "1.00000000",
-  "external_id": "1234",
-  "custom_fields": {
-    "Text Field": "1234",
-    "Date Field": "2022-01-01"
-  }
+  "external_id": "1234"
 }
 ```
 
@@ -1816,11 +1804,7 @@ Amount for your item.
     "product_url": "https://www.procurify.com",
     "currency": 1,
     "cost": "1.00000000",
-    "external_id": "1234",
-    "custom_fields": {
-      "Text Field": "1234",
-      "Date Field": "2022-01-01"
-    }
+    "external_id": "1234"
   },
   "metadata": {}
 }
