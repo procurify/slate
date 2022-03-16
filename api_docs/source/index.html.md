@@ -1705,6 +1705,7 @@ Optional message to save to integration logs.
   "product_url": "https://www.procurify.com",
   "currency": 1,
   "cost": "1.00000000",
+  "department_ids": [123, 456, 789],
   "external_id": "1234"
 }
 ```
@@ -1765,6 +1766,9 @@ maybe a wiki link.)
 <code>cost</code><br />
 Amount for your item.
 
+<code>department_ids</code><br />
+Foreign key to departments.  A catalog item can be assigned to multiple departments.  Requires you to query beforehand via department GET API to retrieve ID's.
+
 ## Update Catalog Item  <code class='put'>PUT</code>
 
 ### HTTP Request
@@ -1784,6 +1788,7 @@ Amount for your item.
   "product_url": "https://www.procurify.com",
   "currency": 1,
   "cost": "1.00000000",
+  "department_ids": [123, 456, 789],
   "external_id": "1234"
 }
 ```
@@ -1843,6 +1848,9 @@ maybe a wiki link.)
 
 <code>cost</code><br />
 Amount for your item.
+
+<code>department_ids</code><br />
+Foreign key to departments.  A catalog item can be assigned to multiple departments.  Requires you to query beforehand via department GET API to retrieve ID's.
 
 
 ## Delete Catalog Item  <code class='delete'>DELETE</code>
@@ -1934,5 +1942,125 @@ name         | name filter, useful to reduce the query speed + reduce response s
       "current_page": 1
     }
   }
+}
+```
+
+## Get Departments  <code class='get'>GET</code>
+
+### HTTP Request
+
+`https://example.procurify.com/api/v3/integrations/departments/`
+
+### HTTP Response Status Code
+
+200 OK
+
+### URL Parameters
+
+Parameter    | Description                                                                           | Example
+------------ |---------------------------------------------------------------------------------------| ----
+show_all     | Due to departments not synced between NS + PFY, please be sure to always pass this in | `?show_all=true`
+department_name | name filter, useful to reduce the query speed + reduce response size                  | `?department_name=Marketing`
+location_name | Due to the fact department names can be repeated across multiple locations, one must also filter by location name to ensure you assign the department ID | `?location_name=Vancouver`
+
+
+### HTTP Response
+
+> The above command returns a JSON structured like this:
+
+```json
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "Accounting",
+            "branch_id": 1,
+            "active": true,
+            "external_id": null,
+            "custom_fields": {}
+        },
+        {
+            "id": 2,
+            "name": "Public Affairs",
+            "branch_id": 1,
+            "active": true,
+            "external_id": null,
+            "custom_fields": {}
+        },
+        {
+            "id": 3,
+            "name": "Computer Science",
+            "branch_id": 1,
+            "active": true,
+            "external_id": null,
+            "custom_fields": {}
+        },
+        {
+            "id": 4,
+            "name": "Mission Operations",
+            "branch_id": 1,
+            "active": true,
+            "external_id": null,
+            "custom_fields": {}
+        },
+        {
+            "id": 5,
+            "name": "Aerospace",
+            "branch_id": 1,
+            "active": true,
+            "external_id": null,
+            "custom_fields": {}
+        },
+        {
+            "id": 6,
+            "name": "Contracting",
+            "branch_id": 1,
+            "active": true,
+            "external_id": null,
+            "custom_fields": {}
+        },
+        {
+            "id": 7,
+            "name": "Shipping/Receiving",
+            "branch_id": 2,
+            "active": true,
+            "external_id": null,
+            "custom_fields": {}
+        },
+        {
+            "id": 8,
+            "name": "Spare Parts",
+            "branch_id": 2,
+            "active": true,
+            "external_id": null,
+            "custom_fields": {}
+        },
+        {
+            "id": 9,
+            "name": "Maintenance",
+            "branch_id": 2,
+            "active": true,
+            "external_id": null,
+            "custom_fields": {}
+        },
+        {
+            "id": 10,
+            "name": "Supplies",
+            "branch_id": 3,
+            "active": true,
+            "external_id": null,
+            "custom_fields": {}
+        }
+    ],
+    "metadata": {
+        "pagination": {
+            "count": 30,
+            "next": "http://antonio.dev.procurify.xyz/api/v3/integrations/netsuite/departments/?page=2&show_all=True",
+            "previous": null,
+            "page_size": 10,
+            "num_pages": 3,
+            "current_page": 1
+        }
+    }
 }
 ```
