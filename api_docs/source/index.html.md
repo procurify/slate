@@ -1690,7 +1690,7 @@ Optional message to save to integration logs.
 
 ### HTTP Request
 
-`https://example.procurify.com/api/v3/integrations/catalog-items/`
+`https://example.procurify.com/api/v3/integrations/netsuite/catalog-items/`
 
 > The above command accepts a body:
 
@@ -1773,7 +1773,7 @@ Foreign key to departments.  A catalog item can be assigned to multiple departme
 
 ### HTTP Request
 
-`https://example.procurify.com/api/v3/integrations/catalog-items/1234/`
+`https://example.procurify.com/api/v3/integrations/netsuite/catalog-items/1234/`
 
 > The above command accepts a body:
 
@@ -1857,7 +1857,7 @@ Foreign key to departments.  A catalog item can be assigned to multiple departme
 
 ### HTTP Request
 
-`https://example.procurify.com/api/v3/integrations/catalog-items/1234/`
+`https://example.procurify.com/api/v3/integrations/netsuite/catalog-items/1234/`
 
 ### HTTP Response Status Code
 
@@ -1867,7 +1867,7 @@ Foreign key to departments.  A catalog item can be assigned to multiple departme
 
 ### HTTP Request
 
-`https://example.procurify.com/api/v3/integrations/currencies/`
+`https://example.procurify.com/api/v3/integrations/netsuite/currencies/`
 
 ### HTTP Response Status Code
 
@@ -1949,7 +1949,7 @@ name         | name filter, useful to reduce the query speed + reduce response s
 
 ### HTTP Request
 
-`https://example.procurify.com/api/v3/integrations/departments/`
+`https://example.procurify.com/api/v3/integrations/netsuite/departments/`
 
 ### HTTP Response Status Code
 
