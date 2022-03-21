@@ -1705,7 +1705,6 @@ Optional message to save to integration logs.
   "product_url": "https://www.procurify.com",
   "currency": 1,
   "cost": "1.00000000",
-  "department_ids": [123, 456, 789],
   "external_id": "1234"
 }
 ```
@@ -1766,8 +1765,6 @@ maybe a wiki link.)
 <code>cost</code><br />
 Amount for your item.
 
-<code>department_ids</code><br />
-Foreign key to departments.  A catalog item can be assigned to multiple departments.  Requires you to query beforehand via department GET API to retrieve ID's.
 
 ## Update Catalog Item  <code class='put'>PUT</code>
 
@@ -1788,7 +1785,6 @@ Foreign key to departments.  A catalog item can be assigned to multiple departme
   "product_url": "https://www.procurify.com",
   "currency": 1,
   "cost": "1.00000000",
-  "department_ids": [123, 456, 789],
   "external_id": "1234"
 }
 ```
@@ -1848,9 +1844,6 @@ maybe a wiki link.)
 
 <code>cost</code><br />
 Amount for your item.
-
-<code>department_ids</code><br />
-Foreign key to departments.  A catalog item can be assigned to multiple departments.  Requires you to query beforehand via department GET API to retrieve ID's.
 
 
 ## Delete Catalog Item  <code class='delete'>DELETE</code>
