@@ -1686,7 +1686,7 @@ ID of the integration object.
 <code>message</code><br />
 Optional message to save to integration logs.
 
-## Create Catalog Item  <code class='post'>POST</code>
+## Create Catalog Item <code class='post'>POST</code>
 
 ### HTTP Request
 
@@ -1705,7 +1705,13 @@ Optional message to save to integration logs.
   "product_url": "https://www.procurify.com",
   "currency": 1,
   "cost": "1.00000000",
-  "external_id": "1234"
+  "external_id": "1234",
+  "custom_fields": [
+    {
+      "custom_field_name": "An existing custom field",
+      "custom_field_value": "An appropriate value"
+    }
+  ]
 }
 ```
 
@@ -1725,7 +1731,10 @@ Optional message to save to integration logs.
     "product_url": "https://www.procurify.com",
     "currency": 1,
     "cost": "1.00000000",
-    "external_id": "1234"
+    "external_id": "1234",
+    "custom_fields": {
+      "An existing custom field": "An appropriate value"
+    }
   },
   "metadata": {}
 }
@@ -1765,8 +1774,10 @@ maybe a wiki link.)
 <code>cost</code><br />
 Amount for your item.
 
+<code>custom_fields[]</code><br />
+A list of custom fields to be assigned to your catalog item. Each custom field object in the list must have an appropriate value and matching name to one of your active custom fields in Procurify.
 
-## Update Catalog Item  <code class='put'>PUT</code>
+## Update Catalog Item <code class='put'>PUT</code>
 
 ### HTTP Request
 
@@ -1785,7 +1796,13 @@ Amount for your item.
   "product_url": "https://www.procurify.com",
   "currency": 1,
   "cost": "1.00000000",
-  "external_id": "1234"
+  "external_id": "1234",
+  "custom_fields": [
+    {
+      "custom_field_name": "An existing custom field",
+      "custom_field_value": "An appropriate value"
+    }
+  ]
 }
 ```
 
@@ -1805,7 +1822,10 @@ Amount for your item.
     "product_url": "https://www.procurify.com",
     "currency": 1,
     "cost": "1.00000000",
-    "external_id": "1234"
+    "external_id": "1234",
+    "custom_fields": {
+      "An existing custom field": "An appropriate value"
+    }
   },
   "metadata": {}
 }
@@ -1844,6 +1864,9 @@ maybe a wiki link.)
 
 <code>cost</code><br />
 Amount for your item.
+
+<code>custom_fields[]</code><br />
+A list of custom fields to be assigned to your catalog item. Each custom field object in the list must have an appropriate value and matching name to one of your active custom fields in Procurify.
 
 
 ## Delete Catalog Item  <code class='delete'>DELETE</code>
