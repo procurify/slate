@@ -46,14 +46,6 @@ Now that Slate is all set up on your machine, you'll probably want to learn more
 
 If you'd prefer to use Docker, instructions are available [in the wiki](https://github.com/lord/slate/wiki/Docker).
 
-### Deploying to S3
+### Deploying to Github Pages
 
-1. Ensure you have AWS staging access to S3.  If you don't, speak with @prokervify
-2. Compile your changes into static files using the command
-```
-bundle exec middleman build --clean
-```
-3. Copy your static files to S3, using the command 
-```
-aws s3 sync ./build s3://public-docs.procurify-staging.com/netsuite
-```
+A deploy script comes bundled with the repo, just follow [these steps here in the official wiki](https://github.com/slatedocs/slate/wiki/Deploying-Slate) to deploy to https://procurify.github.io/sticky/#netsuite.
