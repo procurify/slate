@@ -1,2 +1,5 @@
 .idea/
 vendor
+
+# Vagrant artifacts
+ubuntu-*-console.log
