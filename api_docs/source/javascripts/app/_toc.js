@@ -1,9 +1,10 @@
 //= require ../lib/_jquery
 //= require ../lib/_imagesloaded.min
+import sanitizeHtml from 'sanitize-html';
+
 ;(function () {
   'use strict';
 
-  var htmlPattern = /<[^>]*>/g;
   var loaded = false;
 
   var debounce = function(func, waitTime) {
@@ -82,7 +83,7 @@
         }
         var thisTitle = $best.data("title");
         if (thisTitle !== undefined && thisTitle.length > 0) {
-          document.title = thisTitle.replace(htmlPattern, "") + " – " + originalTitle;
+          document.title = sanitizeHtml(thisTitle) + " – " + originalTitle;
         } else {
           document.title = originalTitle;
         }
