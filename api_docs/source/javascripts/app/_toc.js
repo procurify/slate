@@ -3,7 +3,6 @@
 ;(function () {
   'use strict';
 
-  var htmlPattern = /<[^>]*>/g;
   var loaded = false;
 
   var debounce = function(func, waitTime) {
@@ -82,7 +81,7 @@
         }
         var thisTitle = $best.data("title");
         if (thisTitle !== undefined && thisTitle.length > 0) {
-          document.title = thisTitle.replace(htmlPattern, "") + " – " + originalTitle;
+          document.title = thisTitle + " – " + originalTitle;  // E.g. 'Create Account POST - API Documentation'
         } else {
           document.title = originalTitle;
         }

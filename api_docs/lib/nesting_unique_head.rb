@@ -8,7 +8,8 @@ class NestingUniqueHeadCounter < Middleman::Renderers::MiddlemanRedcarpetHTML
   end
 
   def header(text, header_level)
-    friendly_text = text.gsub(/<[^>]*>/,"").parameterize
+    sanitizer = Rails::Html::FullSanitizer.new
+    friendly_text = sanitizer.sanitize(text).parameterize
     @@headers_history[header_level] = text.parameterize
 
     if header_level > 1
