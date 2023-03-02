@@ -2,6 +2,7 @@ require 'nokogiri'
 
 def toc_data(page_content)
   html_doc = Nokogiri::HTML::DocumentFragment.parse(page_content)
+  sanitizer = Rails::Html::FullSanitizer.new
 
   # get a flat list of headers
   headers = []
@@ -9,7 +10,7 @@ def toc_data(page_content)
     headers.push({
       id: header.attribute('id').to_s,
       content: header.children,
-      title: header.children.to_s.gsub(/<[^>]*>/, ''),
+      title: sanitizer.sanitize(header.children.to_s),
       level: header.name[1].to_i,
       children: []
     })
